@@ -1,0 +1,267 @@
+# baseURI: http://ugritlab.ugr.es/graphdl
+
+@prefix : <http://ugritlab.ugr.es/graphdl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ugritlab.ugr.es/graphdl>
+  rdf:type owl:Ontology ;
+  rdfs:comment "Graph description model. Based on GraphML definitions."^^xsd:string ;
+  rdfs:seeAlso <http://graphml.graphdrawing.org/primer/graphml-primer.html> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Attribute
+  rdf:type owl:Class ;
+  rdfs:comment "Attribute of an element of the graph"^^xsd:string ;
+  rdfs:label "Attribute"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Node ;
+  owl:disjointWith :Port ;
+  owl:disjointWith owl:Nothing ;
+.
+:AttributeValue
+  rdf:type owl:Class ;
+  rdfs:comment "Value instantiation of an attribute"^^xsd:string ;
+  rdfs:label "Attribute value"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Node ;
+  owl:disjointWith :Port ;
+  owl:disjointWith owl:Nothing ;
+.
+:Edge
+  rdf:type owl:Class ;
+  rdfs:comment "Graph edge connecting two nodes"^^xsd:string ;
+  rdfs:label "Edge"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Node ;
+  owl:disjointWith :Port ;
+  owl:disjointWith owl:Nothing ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onClass :Node ;
+      owl:onProperty :source ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onClass :Node ;
+      owl:onProperty :target ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+:Graph
+  rdf:type owl:Class ;
+  rdfs:comment "Graph encompassing nodes, edges and nested graphs. Can be defined as directed or undirected."^^xsd:string ;
+  rdfs:label "Graph"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Node ;
+  owl:disjointWith :Port ;
+  owl:disjointWith owl:Nothing ;
+.
+:Hyperedge
+  rdf:type owl:Class ;
+  rdfs:comment "A hyperedge connects a set of arbitrary graph elements."^^xsd:string ;
+  rdfs:label "Hyperedge"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Node ;
+  owl:disjointWith :Port ;
+  owl:disjointWith owl:Nothing ;
+.
+:Node
+  rdf:type owl:Class ;
+  rdfs:comment "Graph node"^^xsd:string ;
+  rdfs:label "Node"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Port ;
+  owl:disjointWith owl:Nothing ;
+.
+:Port
+  rdf:type owl:Class ;
+  rdfs:comment "A port specifies a logical location on a node to attach edges."^^xsd:string ;
+  rdfs:label "Port"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Node ;
+  owl:disjointWith owl:Nothing ;
+.
+:att
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Connects an edge or a node with an attribute"^^xsd:string ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Node
+          :Edge
+        ) ;
+    ] ;
+  rdfs:range :Attribute ;
+.
+:att_name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Attribute ;
+  rdfs:range xsd:string ;
+.
+:att_type
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Attribute ;
+  rdfs:range xsd:string ;
+.
+:b
+  rdf:type :Attribute ;
+  :att_name "b"^^xsd:string ;
+  :att_type xsd:int ;
+.
+:color
+  rdf:type :Attribute ;
+  :att_name "color"^^xsd:string ;
+  :att_type xsd:string ;
+.
+:directed
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Edge ;
+  rdfs:range xsd:boolean ;
+.
+:edgedefault
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Graph ;
+  rdfs:range xsd:string ;
+.
+:endpoint
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates endpoints to hyperedges"^^xsd:string ;
+  rdfs:domain :Hyperedge ;
+.
+:forAttribute
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :AttributeValue ;
+  rdfs:range :Attribute ;
+.
+:g
+  rdf:type :Attribute ;
+  :att_name "g"^^xsd:string ;
+  :att_type xsd:int ;
+.
+:hasAttributeValue
+  rdf:type owl:ObjectProperty ;
+  rdfs:range :AttributeValue ;
+.
+:id
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Edge
+          :Graph
+          :Node
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+.
+:id_rdf
+  rdf:type :Attribute ;
+  :att_name "id_rdf"^^xsd:string ;
+  :att_type xsd:string ;
+.
+:includes
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Graph ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :Edge
+          :Node
+        ) ;
+    ] ;
+.
+:label
+  rdf:type :Attribute ;
+  :att_name "label"^^xsd:string ;
+  :att_type xsd:string ;
+.
+:port_name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+:r
+  rdf:type :Attribute ;
+  :att_name "r"^^xsd:string ;
+  :att_type xsd:int ;
+.
+:size
+  rdf:type :Attribute ;
+  :att_name "size"^^xsd:string ;
+  :att_type xsd:double ;
+.
+:source
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Edge ;
+  rdfs:range :Node ;
+.
+:target
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :Edge ;
+  rdfs:range :Node ;
+.
+:val
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :AttributeValue ;
+.
+:val_default
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain :Attribute ;
+.
+:weight
+  rdf:type :Attribute ;
+  :att_name "weight"^^xsd:string ;
+  :att_type xsd:double ;
+.
+:x
+  rdf:type :Attribute ;
+  :att_name "x"^^xsd:string ;
+  :att_type xsd:double ;
+.
+:y
+  rdf:type :Attribute ;
+  :att_name "y"^^xsd:string ;
+  :att_type xsd:double ;
+.
+owl:Nothing
+  owl:disjointWith :Attribute ;
+  owl:disjointWith :AttributeValue ;
+  owl:disjointWith :Edge ;
+  owl:disjointWith :Graph ;
+  owl:disjointWith :Hyperedge ;
+  owl:disjointWith :Node ;
+  owl:disjointWith :Port ;
+.

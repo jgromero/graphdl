@@ -1,0 +1,85 @@
+# baseURI: http://ugritlab.ugr.es/graphdl-sample
+# imports: http://ugritlab.ugr.es/graphdl
+
+@prefix : <http://ugritlab.ugr.es/graphdl-sample#> .
+@prefix drugbank: <http://bio2rdf.org/drugbank:> .
+@prefix drugbank-vocabulary: <http://bio2rdf.org/drugbank_vocabulary:> .
+@prefix drugbank-resource: <http://bio2rdf.org/drugbank_resource:> .
+@prefix graphdl: <http://ugritlab.ugr.es/graphdl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://bio2rdf.org/drugbank:DB00005>
+  rdf:type graphdl:Node ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:color ;
+      graphdl:val "yellow"^^xsd:string ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:color ;
+      graphdl:val "yellow"^^xsd:string ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:id ;
+      graphdl:val "Etanercept" ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:id ;
+      graphdl:val "Etanercept" ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute <http://viz.com/category> ;
+      graphdl:val "Immunosuppressive Agents" ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute <http://viz.com/category> ;
+      graphdl:val "Immunosuppressive Agents" ;
+    ] ;
+  rdfs:label "Etanercept" ;
+.
+<http://bio2rdf.org/drugbank:DB00026>
+  rdf:type graphdl:Node ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:color ;
+      graphdl:val "yellow"^^xsd:string ;
+    ] ;
+  rdfs:label "Anakinra" ;
+.
+<http://bio2rdf.org/drugbank:DB00072>
+  rdf:type graphdl:Node ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:color ;
+      graphdl:val "yellow"^^xsd:string ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute graphdl:id ;
+      graphdl:val "Trastuzumab" ;
+    ] ;
+  graphdl:hasAttributeValue [
+      rdf:type graphdl:AttributeValue ;
+      graphdl:forAttribute <http://viz.com/category> ;
+      graphdl:val "Antineoplastic Agents" ;
+    ] ;
+  rdfs:label "Trastuzumab" ;
+.
+<http://bio2rdf.org/drugbank_resource:DB00005_DB00072>
+  rdf:type graphdl:Edge ;
+  graphdl:source <http://bio2rdf.org/drugbank:DB00005> ;
+  graphdl:target <http://bio2rdf.org/drugbank:DB00072> ;
+  rdfs:label "DDI between Etanercept and Trastuzumab - May enhance the neutropenic effect of Immunosuppressants." ;
+.
+<http://ugritlab.ugr.es/graphdl-sample>
+  rdf:type owl:Ontology ;
+  owl:imports <http://ugritlab.ugr.es/graphdl> ;
+.
