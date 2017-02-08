@@ -1,5 +1,10 @@
 package es.ugr.ugritlab.graphs.rdf;
 
+/**
+ * Created by jgomez on 08/02/17.
+
+ * GraphDL to TinkerPop parser.
+ */
 
 import com.google.common.collect.*;
 import org.apache.commons.lang3.tuple.MutablePair;

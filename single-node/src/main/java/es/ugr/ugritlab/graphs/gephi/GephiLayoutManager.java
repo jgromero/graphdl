@@ -1,5 +1,11 @@
 package es.ugr.ugritlab.graphs.gephi;
 
+/**
+ * Created by jgomez on 08/02/17.
+
+ * Gephi layout manager initializes the Gephi environment and performs simple Yifan Hu layout.
+ */
+
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
 import org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerGraph;
 import org.gephi.filters.api.FilterController;
@@ -79,7 +85,7 @@ public class GephiLayoutManager {
         filterController = Lookup.getDefault().lookup(FilterController.class);
         // RankingController rankingController = Lookup.getDefault().lookup(RankingController.class);
 
-        // Set upload temp folder ('config' folder by default)
+        // Set upload temp folder 
         if(context != null)
             uploads = new File(context.getRealPath("/" + tempFolderString));
         else
