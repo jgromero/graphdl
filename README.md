@@ -4,14 +4,12 @@
 
  This repository includes the following GraphDL resources:
 
-1. GraphDL ontology model [ontology](ontology) folder
+1. GraphDL ontology model ([ontology](ontology) folder)
 
-2. Java implementation of a GraphDL >> TinkerPop parser [single-node](single-node) folder
+2. Java implementation of a GraphDL >> TinkerPop parser ([single-node](single-node) folder)
 
-3. Spark implementation of a GraphDL >> GraphX parser [distributed](distributed) folder
+3. Spark implementation of a GraphDL >> GraphX parser ([distributed](distributed) folder)
 
 There is a web application implementing GraphDL-based graph generation and visualization in Amazon cloud. [insert link here]
 
 Contributions are welcome!
-
-
