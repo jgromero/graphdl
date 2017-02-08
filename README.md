@@ -13,3 +13,6 @@
 There is a **web application** implementing GraphDL-based graph generation and visualization running [here](http://35.164.57.130:53188/graphviewer/vizu.html#). Use it wisely!
 
 Contributions are welcome!
+
+>**GraphDL** has been developed within the [BIGFUSE project](http://decsai.ugr.es/~jgomez/bigfuse), and funded by the University of Granada and the Spanish Ministry of Education, Culture and Sport.
+
