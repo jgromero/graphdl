@@ -1,0 +1,64 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX graphdl:  <http://ugritlab.ugr.es/graphdl#>
+PREFIX drugbank: <http://bio2rdf.org/drugbank_vocabulary:>
+
+CONSTRUCT {
+ ?d1 a graphdl:Node ;
+       rdfs:label ?d1_name ;
+       graphdl:hasAttributeValue
+          [graphdl:forAttribute graphdl:color; graphdl:val ?d1_color;
+           a graphdl:AttributeValue ] ;
+       graphdl:hasAttributeValue
+          [graphdl:forAttribute graphdl:id; graphdl:val ?d1_name ;
+           a graphdl:AttributeValue ] ;
+       graphdl:hasAttributeValue
+          [graphdl:forAttribute <http://viz.com/category> ; graphdl:val ?d1_cat_name ;
+           a graphdl:AttributeValue ] .
+ ?d2 a graphdl:Node ;
+       rdfs:label ?d2_name ;
+       graphdl:hasAttributeValue
+           [graphdl:forAttribute graphdl:color; graphdl:val ?d2_color;
+            a graphdl:AttributeValue ] ;
+       graphdl:hasAttributeValue
+           [graphdl:forAttribute graphdl:id; graphdl:val ?d2_name;
+            a graphdl:AttributeValue ] ;
+       graphdl:hasAttributeValue
+           [graphdl:forAttribute <http://viz.com/category> ; graphdl:val ?d2_cat_name;
+            a graphdl:AttributeValue ] .
+ ?i  a graphdl:Edge ;
+       graphdl:source ?d1 ; graphdl:target ?d2 ;
+       rdfs:label ?i_name .
+} WHERE {
+  {
+    SELECT ?d1 where {
+      ?d1 a drugbank:Drug .
+    } LIMIT 50  # Upper threshold for 'source' drugs in query
+  }
+  ?d1 a drugbank:Drug ;
+        drugbank:ddi-interactor-in ?i ;
+        rdfs:label ?d1_label ;
+        drugbank:category ?d1_cat .
+  ?d1_cat rdfs:label ?d1_cat_label .
+  ?i  a drugbank:Drug-Drug-Interaction ;
+        rdfs:label ?i_label .
+  ?d2 a drugbank:Drug ;
+        drugbank:ddi-interactor-in ?i ;
+        rdfs:label ?d2_label ;
+        drugbank:category ?d2_cat .
+  ?d2_cat rdfs:label ?d2_cat_label .
+  FILTER(str(?d1) != str(?d2)) .
+  BIND(
+    IF(str(?d1_cat) =
+       "http://bio2rdf.org/drugbank_vocabulary:Antithrombins", "red", "darkGray" )
+    AS ?d1_color) . # Set color for source node
+  BIND(
+    IF(str(?d2_cat) =
+       "http://bio2rdf.org/drugbank_vocabulary:Antithrombins", "red", "darkGray" )
+    AS ?d2_color)   # Set color for target node
+  # Format label strings
+  BIND(strbefore(?d1_label, " [") AS ?d1_name) .
+  BIND(strbefore(?d2_label, " [") AS ?d2_name) .
+  BIND(strbefore(?i_label, " [drugbank_resource:") AS ?i_name) .
+  BIND(strbefore(?d1_cat_label, " [drugbank_vocabulary:") AS ?d1_cat_name) .
+  BIND(strbefore(?d2_cat_label, " [drugbank_vocabulary:") AS ?d2_cat_name) .
+}
