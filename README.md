@@ -4,15 +4,12 @@
 
  This repository includes the following GraphDL resources:
 
-1. GraphDL ontology model ([ontology](ontology) folder)
-GraphDL ontology in OWL Turtle format. A sample representation is also included in a sample file.
+1. **GraphDL ontology model** ([ontology](ontology) folder): GraphDL ontology in OWL Turtle format. A sample RDF file is also included.
 
-2. Java implementation of a GraphDL >> TinkerPop parser ([single-node](single-node) folder)
-Maven project implementing a parser from a Sesame/RDF4J [GraphQueryResult](http://archive.rdf4j.org/javadoc/sesame-4.1.2/) to a [TinkerPop graph](http://tinkerpop.apache.org/javadocs/current/full/org/apache/tinkerpop/gremlin/tinkergraph/structure/TinkerGraph.html).
+2. **Java single-node implementation** of a GraphDL >> TinkerPop parser ([single-node](single-node) folder): Maven project implementing a parser from a Sesame/RDF4J [GraphQueryResult](http://archive.rdf4j.org/javadoc/sesame-4.1.2/) to a [TinkerPop graph](http://tinkerpop.apache.org/javadocs/current/full/org/apache/tinkerpop/gremlin/tinkergraph/structure/TinkerGraph.html).
 
-3. Spark implementation of a GraphDL >> GraphX parser ([distributed](distributed) folder)
-SBT project implementing an [Apache Spark](http://spark.apache.org/docs/latest/index.html) parser from a triple file (see *triples* folder for a sample file structure and name) to a [GraphX](http://spark.apache.org/docs/latest/graphx-programming-guide.html) representation. To run it, build a *fat* JAR (pre-configured .sbt is provided) and submit to Spark via *spark-submit*.
+3. **Spark implementation** of a GraphDL >> GraphX parser ([distributed](distributed) folder): SBT project implementing an [Apache Spark](http://spark.apache.org/docs/latest/index.html) parser from a triple file (see *triples* folder for a sample file structure and name) to a [GraphX](http://spark.apache.org/docs/latest/graphx-programming-guide.html) representation. To run it, build a *fat* JAR (pre-configured .sbt is provided) and submit to Spark via *spark-submit*.
 
-There is a web application implementing GraphDL-based graph generation and visualization running [here](http://35.164.57.130:53188/graphviewer/vizu.html#). Use it wisely!
+There is a **web application** implementing GraphDL-based graph generation and visualization running [here](http://35.164.57.130:53188/graphviewer/vizu.html#). Use it wisely!
 
-Contributions are welcome.
+Contributions are welcome!
