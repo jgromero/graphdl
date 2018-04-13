@@ -20,7 +20,7 @@ The main elements of the GraphDL ontology are the following:
 ## Example
 The next figure shows the representation of a drug-to-drug interaction built from the information of DrugBank.
 
-![Sample representation con GraphDL][ontology-sample.png]
+![Sample representation con GraphDL](ontology-sample.png)
 
 For the first node _drugbank:DB00005_, the value _yellow_ is assigned to the attribute _color_. We can see that the (reified) attribute value is represented by means of a blank node of type _graphdl:AttributeValue_. This blank node has associated a datatype property _graphdl:val_, with value _yellow_), and an object property (_graphdl:forAttribute_, with value _graphdl:color_). 
 
