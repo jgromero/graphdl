@@ -14,5 +14,6 @@ There is a **web application** implementing GraphDL-based graph generation and v
 
 Contributions are welcome!
 
->**GraphDL** has been developed within the [BIGFUSE project](http://decsai.ugr.es/~jgomez/bigfuse), and funded by the University of Granada and the Spanish Ministry of Education, Culture and Sport.
+<img align="left" width="20%" src="http://decsai.ugr.es/~jgomez/bigfuse/images/logo.png">
 
+>**GraphDL** has been developed within the [BIGFUSE project](http://decsai.ugr.es/~jgomez/bigfuse), and funded by the University of Granada and the Spanish Ministry of Education, Culture and Sport.
