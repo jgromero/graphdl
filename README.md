@@ -10,7 +10,7 @@
 
 3. **Spark implementation** of a GraphDL >> GraphX parser ([distributed](distributed) folder): SBT project implementing an [Apache Spark](http://spark.apache.org/docs/latest/index.html) parser from a triple file (see *triples* folder for a sample file structure and name) to a [GraphX](http://spark.apache.org/docs/latest/graphx-programming-guide.html) representation. To run it, build a *fat* JAR (pre-configured .sbt is provided) and submit to Spark via *spark-submit*.
 
-There is a **web application** implementing GraphDL-based graph generation and visualization running [here](http://sl.ugr.es/webgraphdl). Use it wisely!
+<!-- "There is a **web application** implementing GraphDL-based graph generation and visualization running [here](http://sl.ugr.es/webgraphdl). Use it wisely!" -->
 
 Contributions are welcome!
 
