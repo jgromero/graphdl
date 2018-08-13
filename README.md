@@ -14,6 +14,14 @@
 
 Contributions are welcome!
 
+## Related publications
+
+* Gómez-Romero, Juan and Molina-Solana, Miguel and Oehmichen, Axel and Guo, Yike (2018) **Visualizing Knowledge Graphs: A Performance Analysis**. Future Generation Computer Systems, 89, pp.224-238
+* Gómez-Romero, Juan and Molina-Solana, Miguel (2018) **GraphDL: An Ontology for Linked Data Visualization**. Procs. CAEPIA 2018. October 23-26. Granada, Spain.
+
+
+
 <img align="left" width="20%" src="http://decsai.ugr.es/~jgomez/bigfuse/images/logo.png">
 
 >**GraphDL** has been developed within the [BIGFUSE project](http://decsai.ugr.es/~jgomez/bigfuse), and funded by the University of Granada and the Spanish Ministry of Education, Culture and Sport.
+
