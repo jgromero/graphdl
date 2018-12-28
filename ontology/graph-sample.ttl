@@ -20,23 +20,8 @@
     ] ;
   graphdl:hasAttributeValue [
       rdf:type graphdl:AttributeValue ;
-      graphdl:forAttribute graphdl:color ;
-      graphdl:val "yellow"^^xsd:string ;
-    ] ;
-  graphdl:hasAttributeValue [
-      rdf:type graphdl:AttributeValue ;
       graphdl:forAttribute graphdl:id ;
       graphdl:val "Etanercept" ;
-    ] ;
-  graphdl:hasAttributeValue [
-      rdf:type graphdl:AttributeValue ;
-      graphdl:forAttribute graphdl:id ;
-      graphdl:val "Etanercept" ;
-    ] ;
-  graphdl:hasAttributeValue [
-      rdf:type graphdl:AttributeValue ;
-      graphdl:forAttribute <http://viz.com/category> ;
-      graphdl:val "Immunosuppressive Agents" ;
     ] ;
   graphdl:hasAttributeValue [
       rdf:type graphdl:AttributeValue ;
@@ -44,15 +29,6 @@
       graphdl:val "Immunosuppressive Agents" ;
     ] ;
   rdfs:label "Etanercept" ;
-.
-<http://bio2rdf.org/drugbank:DB00026>
-  rdf:type graphdl:Node ;
-  graphdl:hasAttributeValue [
-      rdf:type graphdl:AttributeValue ;
-      graphdl:forAttribute graphdl:color ;
-      graphdl:val "yellow"^^xsd:string ;
-    ] ;
-  rdfs:label "Anakinra" ;
 .
 <http://bio2rdf.org/drugbank:DB00072>
   rdf:type graphdl:Node ;
